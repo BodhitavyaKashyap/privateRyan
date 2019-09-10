@@ -1,60 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Le Le Car Le</title>
-    <style>
-        body {margin:0;}
-        
-        #navul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: #333;
-          position: fixed;
-          top: 0;
-          width: 100%;
-        }
-        
-        li {
-          float: left;
-        }
-        
-        li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration:none;
-        }
-        
-        li a:hover:not(.active) {
-          background-color: #111;
-        }
-        
-        .active {
-          background-color: #4CAF50;
-        }
-        </style>
-</head>
-<body>
-<nav>
-    <ul id="navul">
-        <li><a href="#home">Choose Trip Type</a></li>
-        <li><a href="#news">Select Car</a></li>
-        <li><a href="#news">Select Driver</a></li>
-        <li><a href="#contact">User Info</a></li>
-        <li><a href="#contact">Payment</a></li>
-        <li><a href="#contact">Order Details</a></li>
-        <li style="float:right"><a href="#about">LogIn/Register</a></li>
-        <li style="float:right"><a class="active" href="dashboard.html">About</a></li>
-      </ul>
-      </nav>
-      <div style="background-image: url('images/Body.jpg');">
 
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Le Le Car Le</title>
+  <style>
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      /* Center the DIV horizontally */
+    }
+
+    .fixed-footer {
+      width: 100%;
+      position: fixed;
+      background: #333;
+      padding: 10px 0;
+      color: #fff;
+    }
+
+    .fixed-footer {
+      bottom: 0;
+    }
+  </style>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    $(function () {
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div id="header"></div>
+  </div>
+  <div style="background-image: url('images/Body.jpg');">
+  </div>
+  <div class="fixed-footer">
+    <div id="footer">Copyright &copy; Bodhitavya kashyap</div>
+  </div>
 </body>
+
 </html>
