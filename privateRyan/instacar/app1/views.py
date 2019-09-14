@@ -22,6 +22,10 @@ def getCars(Request):
     allcars = app1models.Car.objects.all()
     return HttpResponse(allcars.values())
 
+def getCarDetils(Request):
+    allcars = app1models.Car.objects.all()
+    return HttpResponse(allcars.values())
+
 def getDrivers(Request):
     car_id=Request.POST['car']
     order.car=car_id

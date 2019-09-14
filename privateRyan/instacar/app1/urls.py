@@ -6,5 +6,6 @@ urlpatterns = [
     path('destinations',views.getDestinations),
     path('cars',views.getCars),
     path('drivers',views.getDrivers),
-    path('price',views.getPrice)
+    path('price',views.getPrice),
+    path('onlyCars',views.getCarDetils)
 ]
