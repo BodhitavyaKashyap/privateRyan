@@ -19,7 +19,7 @@ export default {
     return { 
       msg1: "THE CARS WE PROVIDE",
       msg2: "Let's Ride",
-      msg3: "click on cars' names to get details",
+      msg3: "click on car's names to get details",
       products:[
       {
         productTitle:"AUDI",
