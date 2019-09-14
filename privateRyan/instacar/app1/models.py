@@ -26,4 +26,9 @@ class Destination(models.Model):
     city = models.CharField(max_length = 50)
     distance =  models.IntegerField()
 
+class Car(models.Model):
+    name = models.CharField(max_length = 50)
+    description = models.CharField(max_length = 500)
+    pics  = models.CharField(max_length = 100)
+
 
