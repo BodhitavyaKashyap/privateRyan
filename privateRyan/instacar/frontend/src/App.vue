@@ -17,22 +17,22 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link class="nav-link" to="/blog">ChoosE-YouR-KinD-OF-TriP</router-link>
+              <router-link class="nav-link" to="/blog">Trip Type</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/blog">SelecT-YouR-CharioT</router-link>
+              <router-link class="nav-link" to="/blog">Select Car</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/blog">SelecT-YouR-CharioteeR</router-link>
+              <router-link class="nav-link" to="/blog">Select Driver</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/blog">YouR-InfO</router-link>
+              <router-link class="nav-link" to="/blog">User Details</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/services">Paisa-DE</router-link>
+              <router-link class="nav-link" to="/services">Payment</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/contact">Ride-DetailS</router-link>
+              <router-link class="nav-link" to="/contact">Ride Details</router-link>
             </li>
           </ul>
         </div>
