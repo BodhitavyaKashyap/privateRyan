@@ -14,14 +14,17 @@ def landingFunction(Request):
     return render(Request,'dashboard.html')
 
 def getDestinations(Request):
-    alldestinations = serializers.serialize('json',app1models.Destination.objects.all())
+    getDestin=app1models.Destination.objects.all()
+    alldestinations = serializers.serialize('json',getDestin)
     return HttpResponse(alldestinations,content_type="text/json-comment-filtered")
 
 def getCars(Request):
+    print(Request.POST)
     destination_id=Request.POST['destination']
     start_date=Request.POST['start_date']
     end_date=Request.POST['end_date']
     trip_type=Request.POST['trip_type']
+    print(destination_id,start_date,end_date,trip_type)
     order.destination=destination_id
     order.startdate=start_date
     order.end_date=end_date

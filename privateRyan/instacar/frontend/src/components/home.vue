@@ -38,6 +38,7 @@ export default {
     axios
       .get(`http://localhost:8000/onlyCars`)
       .then(response => {
+        console.log(response.data)
         this.products = response.data;
       })
       .catch(e => {
