@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.core import serializers
 
 
 #immport models
@@ -23,12 +24,12 @@ def getCars(Request):
     return HttpResponse(allcars.values())
 
 def getCarDetils(Request):
-
-    allcars = app1models.Car.objects.all()
-    return HttpResponse(allcars.values())
+    getCarDetils = app1models.Car.objects.all()
+    post_list = serializers.serialize('json', getCarDetils)
+    return HttpResponse(post_list,content_type="text/json-comment-filtered")
 
 def getDrivers(Request):
-    c
+    car_id=Request.POST['car']
     order.car=car_id
     alldriver = app1models.Driver.objects.all()
     return HttpResponse(alldriver.values())

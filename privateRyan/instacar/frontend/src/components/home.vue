@@ -13,6 +13,7 @@
 
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "home",
   data() {
@@ -20,39 +21,9 @@ export default {
       msg1: "THE CARS WE PROVIDE",
       msg2: "Let's Ride",
       msg3: "click on car's names to get details",
-      products:[
-      {
-        productTitle:"AUDI",
-        image       : require('../assets/Audi.jpg'),
-        productId:1
-      },
-      {
-        productTitle:"BENTLEY",
-        image       : require('../assets/bentley.jpg'),
-        productId:2
-      },
-      {
-        productTitle:"FERRARI",
-        image       : require('../assets/ferrari.jpg'),
-        productId:3
-      },
-      {
-        productTitle:"MERC",
-        image       : require('../assets/Merc.jpg'),
-        productId:4
-      },
-      {
-        productTitle:"ROVER",
-        image       : require('../assets/RangeRover.jpg'),
-        productId:5
-      },
-      {
-        productTitle:"TOYOTA",
-        image       : require('../assets/Thar.jpg'),
-        productId:6
-      }
-      ]
-    }
+      products:[],
+      errors:[] 
+    };
   },
   methods:{
   goTodetail(prodId) {
@@ -62,7 +33,27 @@ export default {
   gotorideBook(){
     this.$router.push({name:'blog'})
   }
+  },
+    mounted() {
+    axios
+      .get(`http://localhost:8000/onlyCars`)
+      .then(response => {
+          console.log(response.data)
+          let z=JSON.parse(response.data);
+          console.log(z)
+          json.forEach((z) => {
+        console.log('ID: ' + z.name);
+        console.log('MSG: ' + z.pics);
+        console.log('TID: ' + z.id);
+        console.log('FROMWHO: ' + z.description);
+});
+        this.products = JSON.parse(response.data);
+      })
+      .catch(e => {
+        this.errors.push(e);
+      });
   }
+
 };
 </script>
 <style scoped>
