@@ -21,6 +21,10 @@ class Order(models.Model):
     destination= models.CharField(max_length = 50)
     price = models.IntegerField()
     driver =  models.ForeignKey(Driver,on_delete=models.CASCADE)
+    startdate = models.DateField()
+    enddate = models.DateField(default=None)
+    triptype=models.CharField(max_length = 50)
+
 
 class Destination(models.Model):
     city = models.CharField(max_length = 50)
