@@ -31,7 +31,7 @@ export default {
     this.$router.push({name:'details',params:{Pid:proId}})
   },
   gotorideBook(){
-    this.$router.push({name:'blog'})
+    this.$router.push({name:'trip'})
   }
   },
   mounted() {

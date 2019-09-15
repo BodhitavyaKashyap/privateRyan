@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link class="nav-link" to="/blog">Trip Type</router-link>
+              <router-link class="nav-link" to="/trip">Trip Type</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/blog">Select Car</router-link>

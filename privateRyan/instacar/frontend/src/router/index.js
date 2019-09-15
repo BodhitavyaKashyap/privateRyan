@@ -5,6 +5,7 @@ import blog from '@/components/blog'
 import services from '@/components/services'
 import contact from '@/components/contact'
 import details from '@/components/details'
+import trip from '@/components/trip'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/blog',
       name: 'blog',
       component: blog
+    },
+    {
+      path: '/trip',
+      name: 'trip',
+      component: trip
     },
     {
       path: '/services',
