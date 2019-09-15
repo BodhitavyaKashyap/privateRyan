@@ -14,14 +14,20 @@ def landingFunction(Request):
     return render(Request,'dashboard.html')
 
 def getDestinations(Request):
-    alldestinations = app1models.Destination.objects.all()
-    return HttpResponse(alldestinations.values())
+    alldestinations = serializers.serialize('json',app1models.Destination.objects.all())
+    return HttpResponse(alldestinations,content_type="text/json-comment-filtered")
 
 def getCars(Request):
     destination_id=Request.POST['destination']
+    start_date=Request.POST['start_date']
+    end_date=Request.POST['end_date']
+    trip_type=Request.POST['trip_type']
     order.destination=destination_id
-    allcars = app1models.Car.objects.all()
-    return HttpResponse(allcars.values())
+    order.startdate=start_date
+    order.end_date=end_date
+    order.triptype=trip_type
+    allcars = serializers.serialize('json',app1models.Car.objects.all())
+    return HttpResponse(allcars,content_type="text/json-comment-filtered")
 
 def getCarDetils(Request):
     getCarDetils = app1models.Car.objects.all()
@@ -31,8 +37,8 @@ def getCarDetils(Request):
 def getDrivers(Request):
     car_id=Request.POST['car']
     order.car=car_id
-    alldriver = app1models.Driver.objects.all()
-    return HttpResponse(alldriver.values())
+    alldriver = serializers.serialize('json',app1models.Driver.objects.all())
+    return HttpResponse(alldriver,content_type="text/json-comment-filtered")
 
 def getPrice(Request):
     driver_id=Request.POST['driver']
