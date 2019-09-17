@@ -21,14 +21,15 @@ def getDestinations(Request):
 def getCars(Request):
     print(Request.POST)
     destination_id=Request.POST['destination']
-    start_date=Request.POST['start_date']
-    end_date=Request.POST['end_date']
-    trip_type=Request.POST['trip_type']
-    print(destination_id,start_date,end_date,trip_type)
-    order.destination=destination_id
-    order.startdate=start_date
-    order.end_date=end_date
-    order.triptype=trip_type
+    start_date=Request.POST['startDate']
+    end_date=Request.POST['endDate']
+    trip_type=Request.POST['tripType']
+    print(start_date,end_date,trip_type)
+    order.destination=destination_id[0]
+    order.startdate=start_date[0]
+    order.end_date=end_date[0]
+    order.triptype=trip_type[0]
+    print(order)
     allcars = serializers.serialize('json',app1models.Car.objects.all())
     return HttpResponse(allcars,content_type="text/json-comment-filtered")
 

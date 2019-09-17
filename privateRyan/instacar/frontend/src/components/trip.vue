@@ -10,7 +10,7 @@
               <input
                 type="radio"
                 class="form-check-input"
-                name="optionsRadios"
+                name="tripType"
                 id="optionsRadios1"
                 value="RoudTrip"
                 checked
@@ -24,7 +24,7 @@
               <input
                 type="radio"
                 class="form-check-input"
-                name="optionsRadios"
+                name="tripType"
                 id="optionsRadios2"
                 value="OneWay"
                 v-model="triptype"
@@ -35,7 +35,7 @@
         </fieldset>
         <div class="form-group">
           <label for="exampleSelect1">Select Destination</label>
-          <select class="form-control" id="exampleSelect1" v-model="destination">
+          <select class="form-control" id="exampleSelect1" v-model="destination" name="destination">
             <option v-for="option in options" :key="option.pk">{{ option.fields.city }}</option>
           </select>
         </div>
@@ -85,17 +85,18 @@ export default {
   },
   methods: {
     next2() {
-        console.log("hijjjjjjjjjjjjjjjhgfdesdfghjhgfrdesdcfghjnbvfcdszxcvghnbvcxszxcvh")
+        //console.log("hijjjjjjjjjjjjjjjhgfdesdfghjhgfrdesdcfghjnbvfcdszxcvghnbvcxszxcvh")
       let currentObj = this;
       this.axios
-        .post('http://localhost:8000/cars', {
-          destination: this.destination,
-          start_date: this.startdate,
-          end_date:this.enddate,
-          trip_type:this.triptype
-        })
+        .post('http://localhost:8000/cars', {params:{
+          "destination": this.destination,
+          "start_date": this.startdate,
+          "end_date":this.enddate,
+          "trip_type":this.triptype
+        }})
         .then(function(response) {
           currentObj.output = response.data;
+          //this.$router.push({name:'blog'})
         })
         .catch(function(error) {
           currentObj.output = error;
